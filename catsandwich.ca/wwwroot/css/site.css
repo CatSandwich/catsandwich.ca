@@ -1,58 +1,53 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-html {
-    color: #C0FFEE;
+body, body a {
+    color: #c0ffee;
     background-color: #121212;
     font-family: 'Lucida Console';
 }
 
-html a{
-    color: #C0FFEE;
+h1, h2, h3, h4, h5, h6,
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{
+    color: #b690d2;
 }
 
-
-.navicon{
-    float: left;
-    display: block;
-}
-
-.navicon img{
-    height: 45px;
-
-    border-style: solid;
-    border-radius: 5px;
-    
-    padding: 0px 18px;
-    margin-right: 10px;
-}
-
-.nav{
-    display: flex;
+nav {
     overflow: hidden;
+    display: inline-grid;
 }
 
-.nav a{
-    color: #C0FFEE;
-    float: left;
+nav a {
     text-align: center;
-    
     font-size: 17px;
-    padding: 14px 20px;
     text-decoration: none;
+    padding: 14px 20px;
+}
 
+nav img{
+    height: 45px;
+    padding: 0px 18px;
+}
+
+nav a, nav img{
+    float: left;
+    color: #dc7e83;
     border-style: solid;
     border-radius: 5px;
-    
     margin-right: 10px;
     margin-bottom: 10px;
 }
 
-.lab-nav{
-
+nav a:hover {
+    background-color: #dc7e83;
+    color: #121212;
+    text-shadow: 0px 0px 1px #121212;
 }
 
-.nav a:hover{
-    background-color: #C0FFEE;
-    color: #121212;
+header hr{
+    border-top: 2px solid #c0ffee;
+}
+
+a img{
+    text-decoration: none;
 }

@@ -9,14 +9,17 @@
 </head>
 <body>
     <header>
-        <div class="navicon">
-            <a asp-page="/Index"><img src="~/media/catsandwichtransparent.png" /></a>
-        </div>
-        <nav class="nav">
-            <div class="nav">
+        <nav>
+            <div class="topnav">
+                <img src="~/media/catsandwichtransparent.png" />
+                <a asp-page="/Index">Home</a>
                 <a asp-page="/Labs/Index">Labs</a>
             </div>
+            <div>
+                @RenderSection("nav", false)
+            </div>
         </nav>
+        <hr />
     </header>
 
     <div>
