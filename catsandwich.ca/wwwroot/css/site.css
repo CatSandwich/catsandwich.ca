@@ -1,26 +1,58 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-body{
-    font-family:'Lucida Console';
+html {
+    color: #C0FFEE;
+    background-color: #121212;
+    font-family: 'Lucida Console';
 }
 
-.topnav{
-    background-color: #121212;
+html a{
     color: #C0FFEE;
+}
+
+
+.navicon{
+    float: left;
+    display: block;
+}
+
+.navicon img{
+    height: 45px;
+
+    border-style: solid;
+    border-radius: 5px;
+    
+    padding: 0px 18px;
+    margin-right: 10px;
+}
+
+.nav{
+    display: flex;
     overflow: hidden;
 }
 
-.topnav a{
-    float: left;
+.nav a{
     color: #C0FFEE;
+    float: left;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    
     font-size: 17px;
+    padding: 14px 20px;
+    text-decoration: none;
+
+    border-style: solid;
+    border-radius: 5px;
+    
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
-.topnav a:hover{
+.lab-nav{
+
+}
+
+.nav a:hover{
     background-color: #C0FFEE;
     color: #121212;
 }
