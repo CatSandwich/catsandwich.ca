@@ -1,7 +1,21 @@
 ﻿@{
     Layout = "_Layout.cshtml";
 }
+<style>
+    .arrow {
+        margin-left: 136px;
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        border-color: #C0FFEE;
+        display: inline-block;
+        padding: 3px;
+        margin-bottom: 10px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+</style>
 
+<i class="arrow down"></i>
 <div class="lab-nav nav">
     <a asp-page="/Labs/Lab1/Index">Lab1</a>
     <a asp-page="/Labs/Lab2/Index">Lab2</a>
