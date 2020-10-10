@@ -1,7 +1,4 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-body, body a {
+﻿html, html a {
     color: #c0ffee;
     background-color: #121212;
     font-family: 'Lucida Console';
@@ -13,7 +10,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{
 }
 
 nav {
-    overflow: hidden;
+    overflow: visible;
     display: inline-grid;
 }
 

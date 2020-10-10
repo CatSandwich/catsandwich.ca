@@ -5,5 +5,72 @@
     ViewData["Title"] = "Lab2";
 }
 
+<style>
+    .internal {
+        background-color: #080808;
+    }
+
+    #id {
+        background-color: #080808;
+    }
+
+    .border {
+        border-style: solid;
+        border-width: 1px;
+        border-color: #c0ffee;
+        border-radius: 5px;
+        padding: 15px;
+    }
+
+    .darker {
+        background-color: #080808;
+    }
+
+    .darkest {
+        background-color: #000000;
+    }
+</style>
+
 <h1>Lab2</h1>
 
+<p style="background-color: #080808">This paragraph is using inline css.</p>
+<p class="internal">This paragraph is using internal css through a class selector.</p>
+<p id="id">This paragraph is using internal css through an id selecto.r</p>
+<br />
+<div class="border">
+    <p>This paragraph is styled through a div.</p>
+    <p>This paragraph is styled through the same div.</p>
+</div>
+<br />
+<a href="https://github.com/CatSandwich/catsandwich.ca/blob/main/catsandwich.ca/wwwroot/css/site.css">Stylesheet</a>
+<p>I don't want to use class selectors for the html element because that would spaghettify the page a bit, but I have html styled directly from within the stylesheet.</p>
+<p>Here's how I would do it if I were going to use class selectors, just so you know that I know how to:</p>
+<ol>
+    <li>
+        Make 2 new class selectors: .html-color and .html-bg-color.
+    </li>
+    <li>
+        Add 'class="html-color html-bg-color"' in the html tag.
+    </li>
+</ol>
+
+<a asp-page="/Labs/Lab2/Portfolio">Portfolio</a>
+
+<br /><br />
+<div class="darker">
+    I already listed my hobbies in Lab1, so I'll go into detail about my programming experience and the game I'm currently working on. <br />
+    I took 3 programming courses in high school and I have done many random projects for fun such as a recursive sudoku solver. I would consider myself an intermediate developer.
+</div>
+<br />
+<div class="darkest">
+    As for game dev, I have no published games, but I have been working in tandem with a professional developer for 10 months now on a co-op game. As I'm not experienced enough to dive 
+    right into such an advanced game, we took a pause and recently started wokring on an isometric tower defense game.
+</div>
+<br />
+<div class="darker">
+    I recruited Val to do sprites for this game as I have absolutely no artistic skill. So far, all I have done is create the framework for creating levels. Each level is composed of a
+    two dimensional array of tiles. The size of the array can be set in the unity editor, and the array will be filled randomly through an array of sprites set in the editor as well.
+
+    The next goal for this game is to add support for paths in each level. I want to read in from a prefab which paths are where, then generate a list of booleans for if they connect to the 8 
+    directions around the tile. Once this is done, the other developer plans to implement a flood fill pathing system. We can then get some monsters walking around and testing more mechanics.
+</div>

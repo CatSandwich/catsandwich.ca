@@ -10,13 +10,15 @@
 <body>
     <header>
         <nav>
-            <div class="topnav">
-                <img src="~/media/catsandwichtransparent.png" />
-                <a asp-page="/Index">Home</a>
-                <a asp-page="/Labs/Index">Labs</a>
-            </div>
-            <div>
-                @RenderSection("nav", false)
+            <div class="nav-bg">
+                <div>
+                    <img src="~/media/catsandwichtransparent.png" />
+                    <a asp-page="/Index">Home</a>
+                    <a asp-page="/Labs/Index">Labs</a>
+                </div>
+                <div>
+                    @RenderSection("nav", false)
+                </div>
             </div>
         </nav>
         <hr />
