@@ -1,12 +1,26 @@
 ﻿@{
     Layout = "_Layout.cshtml";
 }
-</style>
 
 @section nav{
     <div class="lab-nav nav">
-        <a asp-page="/Labs/Lab1/Index">Lab1</a>
-        <a asp-page="/Labs/Lab2/Index">Lab2</a>
+
+        @if (Context.Request.Path == "/Labs/Lab1")
+        {
+            <a class="nav-selected" asp-page="/Labs/Lab1/Index">Lab1</a>
+        }
+        else
+        {
+            <a class="nav-unselected" asp-page="/Labs/Lab1/Index">Lab1</a>
+        }
+        @if (Context.Request.Path.StartsWithSegments("/Labs/Lab2"))
+        {
+            <a class="nav-selected" asp-page="/Labs/Lab2/Index">Lab2</a>
+        }
+        else
+        {
+            <a class="nav-unselected" asp-page="/Labs/Lab2/Index">Lab2</a>
+        }
     </div>
 }
 

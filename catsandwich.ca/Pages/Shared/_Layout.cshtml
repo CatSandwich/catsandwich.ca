@@ -9,12 +9,26 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav runat="server">
             <div class="nav-bg">
                 <div>
                     <img src="~/media/catsandwichtransparent.png" />
-                    <a asp-page="/Index">Home</a>
-                    <a asp-page="/Labs/Index">Labs</a>
+                    @if (Context.Request.Path == "/")
+                    {
+                        <a class="nav-selected" asp-page="/Index">Home</a>
+                    }
+                    else
+                    {
+                        <a class="nav-unselected" asp-page="/Index">Home</a>
+                    }
+                    @if (Context.Request.Path.StartsWithSegments("/Labs"))
+                    {
+                        <a class="nav-selected" asp-page="/Labs/Index">Labs</a>
+                    }
+                    else
+                    {
+                        <a class="nav-unselected" asp-page="/Labs/Index">Labs</a>
+                    }
                 </div>
                 <div>
                     @RenderSection("nav", false)
