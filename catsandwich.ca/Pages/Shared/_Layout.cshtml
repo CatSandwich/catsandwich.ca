@@ -1,4 +1,18 @@
-﻿<!DOCTYPE html>
+﻿@functions {
+    public Microsoft.AspNetCore.Html.IHtmlContent NavItem(string Text, string Link)
+    {
+        string Class = "nav-selected";
+
+        if (Link == "/" && Context.Request.Path != "/")
+            Class = "nav-unselected";
+        else if (!Context.Request.Path.StartsWithSegments(Link))
+            Class = "nav-unselected";
+
+        return Html.Raw($"<a class=\"{Class}\" href=\"{Link}\">{Text}</a>");
+    }
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -6,33 +20,18 @@
     <title>@ViewData["Title"] - catsandwich.ca</title>
     <link rel="icon" type="image/png" href="~/media/catsandwichtransparent.png" />
     <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/nav.css" />
 </head>
 <body>
     <header>
         <nav runat="server">
             <div class="nav-bg">
-                <div>
-                    <img src="~/media/catsandwichtransparent.png" />
-                    @if (Context.Request.Path == "/")
-                    {
-                        <a class="nav-selected" asp-page="/Index">Home</a>
-                    }
-                    else
-                    {
-                        <a class="nav-unselected" asp-page="/Index">Home</a>
-                    }
-                    @if (Context.Request.Path.StartsWithSegments("/Labs"))
-                    {
-                        <a class="nav-selected" asp-page="/Labs/Index">Labs</a>
-                    }
-                    else
-                    {
-                        <a class="nav-unselected" asp-page="/Labs/Index">Labs</a>
-                    }
-                </div>
-                <div>
-                    @RenderSection("nav", false)
-                </div>
+                <img src="~/media/catsandwichtransparent.png" />
+                @NavItem("Home", "/")
+                @NavItem("Labs", "/Labs")
+            </div>
+            <div>
+                @RenderSection("nav", false)
             </div>
         </nav>
         <hr />

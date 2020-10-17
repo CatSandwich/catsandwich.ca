@@ -2,26 +2,22 @@
     Layout = "_Layout.cshtml";
 }
 
-@section nav{
-    <div class="lab-nav nav">
+@functions {
+    public Microsoft.AspNetCore.Html.IHtmlContent NavItem(string Text, string Link)
+    {
+        string Class = "nav-selected";
+        if (Link == "/" && Context.Request.Path != "/")
+            Class = "nav-unselected";
+        else if (!Context.Request.Path.StartsWithSegments(Link))
+            Class = "nav-unselected";
 
-        @if (Context.Request.Path == "/Labs/Lab1")
-        {
-            <a class="nav-selected" asp-page="/Labs/Lab1/Index">Lab1</a>
-        }
-        else
-        {
-            <a class="nav-unselected" asp-page="/Labs/Lab1/Index">Lab1</a>
-        }
-        @if (Context.Request.Path.StartsWithSegments("/Labs/Lab2"))
-        {
-            <a class="nav-selected" asp-page="/Labs/Lab2/Index">Lab2</a>
-        }
-        else
-        {
-            <a class="nav-unselected" asp-page="/Labs/Lab2/Index">Lab2</a>
-        }
-    </div>
+        return Html.Raw($"<a class=\"{Class}\" href=\"{Link}\">{Text}</a>");
+    }
+}
+
+@section nav{
+    @NavItem("Lab1", "/Labs/Lab1")
+    @NavItem("Lab2", "/Labs/Lab2")
 }
 
 @RenderBody()

@@ -1,0 +1,38 @@
+﻿nav {
+    overflow: visible;
+    display: inline-grid;
+}
+
+nav a {
+    text-align: center;
+    font-size: 17px;
+    text-decoration: none;
+    padding: 14px 20px;
+}
+
+nav img{
+    height: 45px;
+    padding: 0px 18px;
+}
+
+nav a, nav img{
+    float: left;
+    color: #dc7e83;
+    border-style: solid;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+nav a:hover {
+    background-color: #dc7e83;
+    color: #121212;
+    text-shadow: 0px 0px 1px #121212;
+}
+
+.nav-selected {
+    background-color: #060606;
+    color: #ff0000;
+    text-shadow: 0px 0px 1px #FF0000;
+    border-color: #ff0000;
+}

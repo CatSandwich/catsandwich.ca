@@ -14,10 +14,5 @@ namespace catsandwich.ca.Pages.Shared
         {
 
         }
-
-        public void Test()
-        {
-            var thing = HttpContext.Request.Path;
-        }
     }
 }
